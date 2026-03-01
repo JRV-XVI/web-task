@@ -1,9 +1,34 @@
 # Introducción al Virtual DOM
-Explicar qué es y cómo funciona. Puedes mencionar que el Virtual DOM es una representación en memoria del DOM real que React utiliza para optimizar la renderización de componentes.
+
+## ¿Qué es el Virtual DOM?
+
+El **Virtual DOM** es una representación en memoria del DOM real que utiliza React
+
+## ¿Cómo funciona el Virtual DOM?
+
+El virtual DOM es una copia del DOM que nos permite hacer cambios sin tocar el DOM que sería costoso en términos de rendimiento. Se compara los cambios realizados en el árbol de componentes de virtual DOM; si hubo nuevos cambios en el virtual DOM al comparar el estado anterior provocara que se actualice los componentes involucrados al DOM.
+
+---
 
 # Función de React.memo
-Describe cómo React.memo es un componente de orden superior que optimiza el rendimiento evitando renderizados innecesarios de componentes funcionales. Explicar cómo se comporta en relación con el Virtual DOM.
+
+## ¿Qué es React.memo?
+
+**React.memo** es una función de orden superior que permite memorizar componentes funcionales.
+
+## ¿Cómo optimiza el rendimiento?
+
+Evita hacer otro renderizado cuando el componente no hizo ningún cambio si esta en React.memo().
+
+---
 
 # Relación entre ambos
-Detallar cómo el uso de React.memo ayuda a minimizar el número de cambios que se hacen en el Virtual DOM y, por ende, en el DOM real.
-Colaboración: Asegúrate de incluir los nombres de cada miembro del equipo que contribuyó a este documento.
+
+Se usan para hacer una optimización de la actualización de DOM por el virtual DOM y evita los renderizados innecesarios de componentes por parte de React.memo(). Ambos son un buen combo para un mejor rendimiento en tiempos.
+
+---
+
+# Colaboración
+
+Jonathan: Documentacion de las preguntas de virtual DOM, React.memo() y sus relacion para un mejor rendimiento. Creacion del repo y despliegue de la parte 2.
+
