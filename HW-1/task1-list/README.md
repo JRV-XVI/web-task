@@ -30,12 +30,16 @@ npm run dev
 
 ```
 src/
-├── App.jsx              # Componente principal con toda la lógica
+├── App.jsx              # Componente principal (container)
 ├── components/
-│   └── Item.jsx         # Componente individual optimizado con memo
+│   └── items/
+│       ├── ItemList.jsx # Componente con toda la lógica y estado
+│       └── Item.jsx     # Componente individual de cada elemento
 ├── App.css              # Estilos
 └── main.jsx             # Punto de entrada
 ```
+
+Este proyecto sigue la misma estructura de carpetas que mapExample.
 
 ## Funcionalidades
 
