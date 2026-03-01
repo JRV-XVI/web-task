@@ -31,4 +31,5 @@ Se usan para hacer una optimización de la actualización de DOM por el virtual 
 # Colaboración
 
 Jonathan: Documentacion de las preguntas de virtual DOM, React.memo() y sus relacion para un mejor rendimiento. Creacion del repo y despliegue de la parte 2.
+Mario: Implementación de la lista dinámica con el formato map example, implementando: Nuevos elementos, eliminar existentes, revertir orden, incrementar contador de me gusta así como su botón
 
