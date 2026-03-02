@@ -1,4 +1,9 @@
-const Item = (props) => {
+import { memo } from "react";
+
+const Item = memo(function Item(props) {
+  //log 3 : item
+  console.log("Render Item:", props.titulo);
+
   return (
     <div className="col-lg-4">
       <div className="text-center card-box">
@@ -24,6 +29,6 @@ const Item = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default Item;
