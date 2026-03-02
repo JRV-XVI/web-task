@@ -129,3 +129,5 @@ Implementación de la lista dinámica con el formato map example, implementando:
 #### Sebastián
 Análisis y documentación del uso de Virtual DOM en cada directorio del repositorio, patrones de re-renderizado, bugs evitados y glosario.
 
+#### Luis Valde
+Implementaciòn del hook memo para poder memorizar componentes funcionales y no renderizar innecesariamente en el punto 1. (implementaciòn en carpeta 'memo').
