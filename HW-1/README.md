@@ -34,3 +34,5 @@ Jonathan: Documentacion de las preguntas de virtual DOM, React.memo() y sus rela
 Mario: Implementación de la lista dinámica con el formato map example, implementando: Nuevos elementos, eliminar existentes, revertir orden, incrementar contador de me gusta así como su botón.
 Angel: Implementación de logs para checar renderizado y el uso del useCallback en las funciones de revertir el orden de la lista, y agregar, eliminar y dar like a Items para que la implementación del .memo funcione correctamente.
 
+**Luis Valde**: Implementaciòn del hook memo para poder memorizar componentes funcionales y no renderizar innecesariamente en el punto 1.
+
