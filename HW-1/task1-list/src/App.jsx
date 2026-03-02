@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import "./App.css";
 import Item from "./components/Item";
 
@@ -14,29 +14,42 @@ function App() {
 
   console.log("Render App");
 
-  function agregarItem() {
-    if (!nuevoTitulo.trim()) return;
+  const agregarItem = useCallback(() => { 
+    if (!nuevoTitulo.trim()) 
+      return; 
 
-    setItems([...items, { id: nextId, titulo: nuevoTitulo, likes: 0 }]);
-    setNextId(nextId + 1);
-    setNuevoTitulo("");
-  }
+    setItems((items) => [ 
+      ...items, 
+      { id: nextId, titulo: nuevoTitulo, likes: 0 }, 
+    ]); 
+    setNextId((id) => id + 1); 
+    setNuevoTitulo(""); 
+  }, 
+  [nuevoTitulo, nextId]);
 
-  function eliminarItem(id) {
-    setItems(items.filter((item) => item.id !== id));
-  }
 
-  function incrementarLikes(id) {
-    setItems(
+
+  const eliminarItem = useCallback((id)  => {
+    setItems( (items)  => items.filter((item) => item.id !== id));
+  }, []);
+
+
+
+  const incrementarLikes = useCallback((id) => {
+    setItems((items) =>
       items.map((item) =>
-        item.id === id ? { ...item, likes: item.likes + 1 } : item
+        item.id === id ? { ...item, likes: item.likes +1 } : item
       )
     );
-  }
+  },
+  []);
 
-  function revertirOrden() {
-    setItems([...items].reverse());
-  }
+
+
+  const revertirOrden = useCallback(() => {
+    setItems((items) => [...items].reverse());
+  }, 
+  []);
 
   return (
     <div>
