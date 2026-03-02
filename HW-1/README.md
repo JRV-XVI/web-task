@@ -131,3 +131,6 @@ Análisis y documentación del uso de Virtual DOM en cada directorio del reposit
 
 #### Luis Valde
 Implementaciòn del hook memo para poder memorizar componentes funcionales y no renderizar innecesariamente en el punto 1. (implementaciòn en carpeta 'memo').
+
+#### Angel Gabriel
+Implementación de useCallback en las funciones de los componentes ListItem e Item para el correcto uso de React.memo y evitar el renderizado innecesario de los componentes.
