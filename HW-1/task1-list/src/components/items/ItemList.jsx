@@ -1,51 +1,45 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Item from "./Item";
 
 const ItemList = () => {
+  //log 2 : lista de items
+  console.log("Render ItemList");
+
   const [items, setItems] = useState([
-    {
-      id: 1,
-      titulo: "Primer elemento",
-      likes: 0,
-    },
-    {
-      id: 2,
-      titulo: "Segundo elemento",
-      likes: 0,
-    },
-    {
-      id: 3,
-      titulo: "Tercer elemento",
-      likes: 0,
-    },
+    { id: 1, titulo: "Primer elemento", likes: 0 },
+    { id: 2, titulo: "Segundo elemento", likes: 0 },
+    { id: 3, titulo: "Tercer elemento", likes: 0 },
   ]);
 
   const [nuevoTitulo, setNuevoTitulo] = useState("");
   const [nextId, setNextId] = useState(4);
 
-  const agregarItem = () => {
+  const agregarItem = useCallback(() => {
     if (!nuevoTitulo.trim()) return;
 
-    setItems([...items, { id: nextId, titulo: nuevoTitulo, likes: 0 }]);
-    setNextId(nextId + 1);
+    setItems((items) => [
+      ...items,
+      { id: nextId, titulo: nuevoTitulo, likes: 0 },
+    ]);
+    setNextId((id) => id + 1);
     setNuevoTitulo("");
-  };
+  }, [nuevoTitulo, nextId]);
 
-  const eliminarItem = (id) => {
-    setItems(items.filter((item) => item.id !== id));
-  };
+  const eliminarItem = useCallback((id) => {
+    setItems((items) => items.filter((item) => item.id !== id));
+  }, []);
 
-  const incrementarLikes = (id) => {
-    setItems(
+  const incrementarLikes = useCallback((id) => {
+    setItems((items) =>
       items.map((item) =>
         item.id === id ? { ...item, likes: item.likes + 1 } : item
       )
     );
-  };
+  }, []);
 
-  const revertirOrden = () => {
-    setItems([...items].reverse());
-  };
+  const revertirOrden = useCallback(() => {
+    setItems((items) => [...items].reverse());
+  }, []);
 
   return (
     <div>
